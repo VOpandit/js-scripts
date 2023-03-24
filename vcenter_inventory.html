@@ -1,0 +1,247 @@
+<html>
+<head>
+    <!-- Load the latest version -->
+    <link rel="stylesheet" href="clr-ui2.min.css" />
+    <!-- Or load a specific version -->
+    <link rel="stylesheet" href="clr-ui.min.css" />
+
+    <!--CLARITY ICONS STYLE-->
+    <link rel="stylesheet" href="clarity-icons.min.css">
+
+    <!--CLARITY ICONS DEPENDENCY: CUSTOM ELEMENTS POLYFILL-->
+    <script src="custom-elements.min.js"></script>
+
+    <!--CLARITY ICONS API & ALL ICON SETS-->
+    <script src="clarity-icons.min.js"></script>
+    <!--JQUERY-->
+    <script src="jquery.min.js"></script>
+   <!--Table to Excel-->
+    <script src="tableToExcel.js"></script>
+    
+
+<style>
+    .table thead th, .table tbody td{text-align: left;}
+</style>
+
+</head>
+<body>
+    <header class="header header-6">
+       <font color="#FFFFFF"; style="position: absolute; top: 20px; left: 10px;" size="5">VMware VM Inventory Report</font>
+       <clr-icon shape="note" size="45"; style="position: absolute; top: 5px; left: 360px;"></clr-icon>
+    </header>
+
+    <br>
+    <button id="btnExport" onclick="exportReportToExcel(this)" style="float: right;">Export</button>
+    <br>
+    <div class="main-container" style="height:auto;overflow-x:auto;">
+        <div class="content-container">
+            <div class="content-area">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>State</th>
+                            <th>Status</th>
+                            <th>Managed By</th>
+                            <th>Host</th>
+                            <th>Provisioned Space</th>
+                            <th>Used Space</th>
+                            <th>Host CPU</th>
+                            <th>Host Mem</th>
+                            <th>Guest Mem - %</th>
+                            <th>GuestOS</th>
+                            <!-- <th>Compatibility</th> -->
+                            <th>Memory Size</th>
+                            <th>Reservation</th>
+                            <th>CPUs</th>
+                            <th>NICs</th>
+                            <th>Uptime</th>
+                            <th>IP Address</th>
+                            <th>VMware Tools Version Status</th>
+                            <th>VMware Tools Running Status</th>
+                            <th>DNS Name</th>
+                            <th>EVC Mode</th>
+                            <th>UUID</th>
+                            <th>Notes</th>
+                            <th>Alarm Actions</th>
+                            <th>HA Protection</th>
+                            <th>Needs Consolidation</th>
+                            <!-- <th>VM Storage Policies Compliance</th>
+                            <th>Encryption</th> -->
+                            <th>TPM</th>
+                            <th>VBS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Linux-Test</td>
+                            <td>poweredOff
+                            <td>green</td>
+                            <td></td>
+                            <td>esx101.vmlab.local</td>
+                            <td>18 GB</td>
+                            <td>16 GB</td>
+                            <td>0 MHz</td>
+                            <td>0 MB</td>
+                            <td>
+                                                        </th>
+                            <td></td>
+                            <!-- <td><font color="#FC0107">Compatibility</font></td> -->
+                            <td>2.0 GB</td>
+                            <td>0 MB</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>
+                                                        <td>0</td>
+                            <td>guestToolsNotRunning</td>
+                            <td></td>
+                            <td></td>
+                            <td>420b08f2-a4cf-e236-d0dd-9525ae08f7af</td>
+                            <td>
+                            <td>True</td>
+                            <td>
+                                                        </td>
+                            <td>False</td>
+                            <!-- <td><font color="#FC0107">VM Storage Policies Compliance</font></td>
+                            <td><font color="#FC0107">Encryption</font></td> -->
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Ansible_Ubuntu</td>
+                            <td>poweredOff
+                            <td>green</td>
+                            <td></td>
+                            <td>esx101.vmlab.local</td>
+                            <td>19 GB</td>
+                            <td>16 GB</td>
+                            <td>0 MHz</td>
+                            <td>0 MB</td>
+                            <td>
+                                                        </th>
+                            <td></td>
+                            <!-- <td><font color="#FC0107">Compatibility</font></td> -->
+                            <td>3.0 GB</td>
+                            <td>0 MB</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>
+                                                        <td>0</td>
+                            <td>guestToolsNotRunning</td>
+                            <td></td>
+                            <td></td>
+                            <td>420b1ee1-0b6d-105c-3396-9f43b52b91aa</td>
+                            <td>
+                            <td>True</td>
+                            <td>
+                                                        </td>
+                            <td>False</td>
+                            <!-- <td><font color="#FC0107">VM Storage Policies Compliance</font></td>
+                            <td><font color="#FC0107">Encryption</font></td> -->
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Win-Test</td>
+                            <td>poweredOff
+                            <td>green</td>
+                            <td></td>
+                            <td>esx101.vmlab.local</td>
+                            <td>84 GB</td>
+                            <td>40 GB</td>
+                            <td>0 MHz</td>
+                            <td>0 MB</td>
+                            <td>
+                                                        </th>
+                            <td>Microsoft Windows Server 2016 (64-bit)</td>
+                            <!-- <td><font color="#FC0107">Compatibility</font></td> -->
+                            <td>4.0 GB</td>
+                            <td>0 MB</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>
+                                                        <td>0</td>
+                            <td>guestToolsNotRunning</td>
+                            <td></td>
+                            <td></td>
+                            <td>420bdbef-83f9-8689-cfc3-8d24e90223bf</td>
+                            <td>
+                            <td>True</td>
+                            <td>
+                                                        </td>
+                            <td>False</td>
+                            <!-- <td><font color="#FC0107">VM Storage Policies Compliance</font></td>
+                            <td><font color="#FC0107">Encryption</font></td> -->
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>vcenter100</td>
+                            <td>poweredOn
+                            <td>green</td>
+                            <td></td>
+                            <td>esx102.vmlab.local</td>
+                            <td>240 GB</td>
+                            <td>240 GB</td>
+                            <td>1261 MHz</td>
+                            <td>9923 MB</td>
+                            <td>
+                                                          18.0
+                                                        </th>
+                            <td>Other 3.x or later Linux (64-bit)</td>
+                            <!-- <td><font color="#FC0107">Compatibility</font></td> -->
+                            <td>10.0 GB</td>
+                            <td>0 MB</td>
+                            <td>2</td>
+                            <td>1</td>
+                            <td>4892</td>
+                            <td>
+                                                                                                                            192.168.1.100</br>
+                                                                                                                      <td>10277</td>
+                            <td>guestToolsRunning</td>
+                            <td>vcenter100.vmlab.local</td>
+                            <td></td>
+                            <td>564d2865-ce09-334f-279b-c86ac6d3a280</td>
+                            <td>VMware vCenter Server Appliance
+                            <td>True</td>
+                            <td>
+                                                        </td>
+                            <td>False</td>
+                            <!-- <td><font color="#FC0107">VM Storage Policies Compliance</font></td>
+                            <td><font color="#FC0107">Encryption</font></td> -->
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <!--Export Table data into excel sheet-->
+    <script>
+        function exportReportToExcel() {
+        let table = document.getElementsByTagName("table");
+        TableToExcel.convert(table[0], { 
+        name: `export.xlsx`,
+        sheet: {
+        name: 'Sheet 1'
+    }
+    });
+    }
+    </script>
+
+<!--Change td background when td contains poweredOff-->
+    <script>
+       $("tr td:contains('poweredOff')").each(function(){
+        $(this).css("background-color","#F7AA97");
+        });
+    </script>
+
+
+
+</body>
+</html>
